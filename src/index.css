@@ -1,0 +1,17 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 800;
+}
+
+.no-link-style {
+  color: inherit;
+}
+
+.no-link-style:hover {
+  text-decoration: none;
+  color: inherit;
+}

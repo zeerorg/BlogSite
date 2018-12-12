@@ -13,7 +13,7 @@ const DisplayPost = function(props) {
   }, []);
 
   return (
-    <div className="container DisplayPost">
+    <div className="container mx-0 px-0 DisplayPost">
       <div className="row">
         <div className="col-md-9">
           <div dangerouslySetInnerHTML={{ __html: props.postHtml }} />

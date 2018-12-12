@@ -10,9 +10,9 @@ const Post = function(props) {
   return (
     <React.Fragment>
       <div>
-        <div className="container">
+        <div className="container mx-0 px-0">
           <Link to="/" className="no-link-style">
-            <h2>Rishabh's Blog</h2>
+            <h2 className="mt-5">Rishabh's Blog</h2>
           </Link>
         </div>
       </div>

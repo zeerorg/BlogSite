@@ -5,7 +5,7 @@ import Router from "./Router";
 const Main = function(props) {
   return (
     <div className="container">
-      <div className="m-3 my-5">
+      <div className="my-3">
         <Router />
       </div>
     </div>

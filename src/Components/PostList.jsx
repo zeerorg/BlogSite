@@ -7,11 +7,14 @@ import { api as url } from "../urls";
 const Post = function(props) {
   return (
     <div className="my-5">
-      <Link to={"/post/" + props.slug} className="no-link-style my-3">
-        <h3>{props.title}</h3>
-      </Link>
+      <h3>
+        <Link to={"/post/" + props.slug} className="no-link-style my-3">
+          {props.title}
+        </Link>
+      </h3>
       <p>
-        {new Date(props.timestamp*1000).toDateString()}, {props.type.toUpperCase()}
+        {new Date(props.timestamp * 1000).toDateString()},{" "}
+        {props.type.toUpperCase()}
       </p>
       <p>{props.tldr}</p>
     </div>
@@ -25,7 +28,8 @@ const PostList = function(props) {
     <div>
       <GetContent url={url}>
         {allData =>
-          JSON.parse(allData).reverse()
+          JSON.parse(allData)
+            .reverse()
             .filter(
               data =>
                 (section === "all" || data.type === section) && data.published

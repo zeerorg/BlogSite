@@ -9,14 +9,16 @@ const Home = function(props) {
   return (
     <React.Fragment>
       <div className="my-5">
-        <Link to="/" className="no-link-style">
-          <h1>Rishabh's Blog</h1>
-        </Link>
+        <h1>
+          <Link to="/" className="no-link-style">
+            Rishabh's Blog
+          </Link>
+        </h1>
       </div>
       <p className="my-5">
         I'm Rishabh, I blog about software development and some casual stuff.
         <br />
-        <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /{" "}
+        <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /
         <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a>
       </p>
       <SectionNav section={section} />

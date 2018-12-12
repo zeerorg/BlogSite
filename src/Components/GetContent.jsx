@@ -6,6 +6,7 @@ import DelayedRender from "./DelayedRender";
 const GetContent = function(props) {
   let [data, setData] = useState(null);
   let { url } = props;
+  let caching = process.env.NODE_ENV === "development";
 
   let Waiting = !!props.Waiting
     ? props.Waiting
@@ -25,7 +26,7 @@ const GetContent = function(props) {
 
   useEffect(() => {
     let tempStore = sessionStorage.getItem(url);
-    if (tempStore === null) {
+    if (tempStore === null || caching) {
       fetch(url)
         .then(res => res.text())
         .then(textData => {

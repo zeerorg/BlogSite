@@ -7,6 +7,10 @@ h1 {
   font-weight: 800;
 }
 
+h3 {
+  font-weight: 800
+}
+
 .no-link-style {
   color: inherit;
 }

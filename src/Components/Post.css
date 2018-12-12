@@ -1,0 +1,21 @@
+h1 {
+  font-weight: 800
+}
+
+h2 {
+  font-weight: 800;
+}
+
+.DisplayPost h2, .DisplayPost h1, .DisplayPost h3 {
+  margin-bottom: 1rem !important;
+  margin-top: 2rem !important;
+}
+
+.DisplayPost h2, .DisplayPost h3 {
+  font-size: large;
+}
+
+.DisplayPost p, .DisplayPost ol, .DisplayPost li {
+  margin-bottom: 1rem !important;
+  margin-top: 1rem !important;
+}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const SectionNav = function(props) {
   const { section } = props;
   const tabs = [
-    ["tech", "TECH", "/"],
+    ["tech", "TECH", "/tech"],
     ["casual", "CASUAL", "/casual"],
     ["major", "MAJOR", "/major"]
   ];
@@ -14,7 +14,7 @@ const SectionNav = function(props) {
       type = "btn-dark";
     }
     return (
-      <Link className={"btn btn-sm mr-4 " + type} to={ele[2]}>
+      <Link className={"btn btn-sm mr-4 " + type} to={ele[2]} key={ele[0]}>
         {ele[1]}
       </Link>
     );

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 
@@ -7,13 +7,21 @@ import "./Post.css";
 
 const DisplayPost = function(props) {
   hljs.registerLanguage("javascript", javascript);
+  let postContainer = useRef(null);
 
   useEffect(() => {
     hljs.initHighlighting();
-  }, []);
+
+    // Add target: _blank to all link
+    let links = postContainer.current.getElementsByTagName('a');
+    for (let i = 0; i < links.length; i++) {
+      links.item(i).setAttribute("target", "_blank");
+    }
+    
+  }, [props.postHtml]);
 
   return (
-    <div className="container mx-0 px-0 DisplayPost">
+    <div className="container mx-0 px-0 DisplayPost" ref={postContainer}>
       <div className="row">
         <div className="col-md-9">
           <div dangerouslySetInnerHTML={{ __html: props.postHtml }} />

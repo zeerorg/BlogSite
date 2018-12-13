@@ -18,7 +18,7 @@ const Home = function(props) {
       <p className="my-5">
         I'm Rishabh, I blog about software development and some casual stuff.
         <br />
-        <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /
+        <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /{" "}
         <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a>
       </p>
       <SectionNav section={section} />

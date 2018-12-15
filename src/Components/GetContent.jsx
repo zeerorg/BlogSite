@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import ReactLoading from "react-loading";
 
 import DelayedRender from "./DelayedRender";
+import LoadingComponent from "./LoadingComponent";
 
 const GetContent = function(props) {
   let [data, setData] = useState(null);
@@ -12,15 +12,7 @@ const GetContent = function(props) {
     ? props.Waiting
     : () => (
         <DelayedRender timeout={5000}>
-          <div className="d-flex justify-content-center m-5">
-            <ReactLoading
-              type="spin"
-              color="#000"
-              height="32px"
-              width="32px"
-              className="m-5"
-            />
-          </div>
+          <LoadingComponent />
         </DelayedRender>
       );
 

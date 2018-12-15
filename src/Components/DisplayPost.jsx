@@ -11,6 +11,13 @@ const DisplayPost = function(props) {
   hljs.registerLanguage("cs", cs);
   let postContainer = useRef(null);
 
+  // set title and meta
+  document.title = props.title;
+  var meta = document.createElement('meta');
+  meta.name = "description";
+  meta.content = props.tldr;
+  document.getElementsByTagName('head')[0].appendChild(meta);
+
   useEffect(() => {
     hljs.initHighlighting();
 
@@ -18,8 +25,8 @@ const DisplayPost = function(props) {
     let links = postContainer.current.getElementsByTagName('a');
     for (let i = 0; i < links.length; i++) {
       links.item(i).setAttribute("target", "_blank");
-    }
-    
+      links.item(i).setAttribute("rel", "noopener")
+    }    
   }, [props.postHtml]);
 
   return (

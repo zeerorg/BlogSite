@@ -1,12 +1,14 @@
 import React, { useEffect, useRef } from "react";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
+import cs from "highlight.js/lib/languages/cs";
 
-import "highlight.js/styles/atom-one-dark.css";
+import "highlight.js/styles/monokai.css";
 import "./Post.css";
 
 const DisplayPost = function(props) {
   hljs.registerLanguage("javascript", javascript);
+  hljs.registerLanguage("cs", cs);
   let postContainer = useRef(null);
 
   useEffect(() => {

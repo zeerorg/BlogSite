@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 
 const DelayedRender = function(props) {
   let [start, setStart] = useState(false);
+  let timeout = !!props.timeout ? props.timeout : 2000;
 
   useEffect(() => {
     const timeoutVar = setTimeout(() => {
       setStart(true);
-    }, props.timeout);
+    }, timeout);
 
     return () => {
       clearTimeout(timeoutVar);

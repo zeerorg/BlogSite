@@ -11,7 +11,7 @@ const GetContent = function(props) {
   let Waiting = !!props.Waiting
     ? props.Waiting
     : () => (
-        <DelayedRender timeout={300}>
+        <DelayedRender timeout={5000}>
           <div className="d-flex justify-content-center m-5">
             <ReactLoading
               type="spin"

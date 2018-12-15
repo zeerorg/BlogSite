@@ -32,7 +32,7 @@ const PostList = function(props) {
             .reverse()
             .filter(
               data =>
-                (section === "all" || data.type === section) && data.published
+                ((section === "all" && !data.notFrontpage) || data.type === section) && data.published
             )
             .map(data => <Post {...data} key={data.slug} section={section} />)
         }

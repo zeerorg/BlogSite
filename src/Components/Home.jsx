@@ -23,6 +23,7 @@ const Home = function(props) {
       </p>
       <SectionNav section={section} />
       <PostList section={section} />
+      <a href="/rss.xml">RSS Feed</a>
     </React.Fragment>
   );
 };

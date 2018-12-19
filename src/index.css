@@ -16,11 +16,19 @@ a, a:hover {
   text-decoration: none;
 }
 
-.no-link-style {
-  color: inherit;
+a {
+  text-decoration: underline;
 }
 
-.no-link-style:hover {
+.no-link-style, .no-link-style:hover {
+  color: inherit;
   text-decoration: none;
+}
+
+.on-hover-white:hover {
+  color: white;
+}
+
+.on-hover-white {
   color: inherit;
 }

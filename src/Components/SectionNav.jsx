@@ -14,7 +14,7 @@ const SectionNav = function(props) {
       type = "btn-dark";
     }
     return (
-      <Link className={"btn btn-sm mr-4 " + type} to={ele[2]} key={ele[0]}>
+      <Link className={"btn btn-sm mr-4 no-link-style on-hover-white " + type} to={ele[2]} key={ele[0]}>
         {ele[1]}
       </Link>
     );

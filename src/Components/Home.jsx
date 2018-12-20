@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 import SectionNav from "./SectionNav";
@@ -6,6 +6,11 @@ import PostList from "./PostList";
 
 const Home = function(props) {
   let { section } = props;
+
+  useEffect(() => {
+    document.title = "Rishabh's Blog"
+  }, []);
+
   return (
     <React.Fragment>
       <div className="my-5">

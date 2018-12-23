@@ -19,8 +19,9 @@ const DisplayPost = function(props) {
   document.getElementsByTagName('head')[0].appendChild(meta);
 
   useEffect(() => {
+    hljs.initHighlighting.called = false;
     hljs.initHighlighting();
-
+    
     // Add target: _blank to all link
     let links = postContainer.current.getElementsByTagName('a');
     for (let i = 0; i < links.length; i++) {

@@ -6,7 +6,6 @@ import LoadingComponent from "./LoadingComponent";
 const GetContent = function(props) {
   let [data, setData] = useState(null);
   let { url } = props;
-  let caching = process.env.NODE_ENV === "development";
 
   let Waiting = !!props.Waiting
     ? props.Waiting
@@ -18,16 +17,15 @@ const GetContent = function(props) {
 
   useEffect(() => {
     let tempStore = sessionStorage.getItem(url);
-    if (tempStore === null || caching) {
-      fetch(url)
-        .then(res => res.text())
-        .then(textData => {
-          sessionStorage.setItem(url, textData);
-          setData(textData);
-        });
-    } else {
-      setData(tempStore);
-    }
+    fetch(url)
+      .then(res => res.text())
+      .then(textData => {
+        if (textData === tempStore) return;
+        
+        sessionStorage.setItem(url, textData);
+        setData(textData);
+      });
+    setData(tempStore);
   }, []);
 
   if (data === null) {

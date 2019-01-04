@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 import cs from "highlight.js/lib/languages/cs";
+import bash from "highlight.js/lib/languages/bash";
 
 import "highlight.js/styles/monokai.css";
 import "./Post.css";
@@ -9,6 +10,7 @@ import "./Post.css";
 const DisplayPost = function(props) {
   hljs.registerLanguage("javascript", javascript);
   hljs.registerLanguage("cs", cs);
+  hljs.registerLanguage("bash", bash);
   let postContainer = useRef(null);
 
   // set title and meta

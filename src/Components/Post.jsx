@@ -11,19 +11,32 @@ const Post = function(props) {
     <React.Fragment>
       <div>
         <div className="container mx-0 px-0">
-          <Link to="/" className="no-link-style">
-            <h2 className="mt-5">Rishabh's Blog</h2>
-          </Link>
+          <div className="row">
+            <div className="col-md-1" />
+            <div className="col-md-8">
+              <Link to="/" className="no-link-style">
+                <h2 className="my-4">Rishabh's Blog</h2>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-      <GetContent url={urls.api}>
-        {allData => {
+      <GetContent url={[urls.api, urls.series]} key={slug}>
+        {(allData, allSeries) => {
           const post = JSON.parse(allData).filter(
             data => data.slug === slug
           )[0];
+          const series = JSON.parse(allSeries)[post["series"]];
           return (
             <GetContent url={urls.GetHTML(post.filename)}>
-              {postHtml => <DisplayPost {...post} postHtml={postHtml} />}
+              {postHtml => (
+                <DisplayPost
+                  {...post}
+                  postHtml={postHtml}
+                  series={series ? series : null}
+                  key={post.slug}
+                />
+              )}
             </GetContent>
           );
         }}

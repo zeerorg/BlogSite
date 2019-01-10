@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import SectionNav from "./SectionNav";
 import PostList from "./PostList";
 
 const Home = function(props) {
@@ -26,7 +25,6 @@ const Home = function(props) {
         <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /{" "}
         <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a>
       </p>
-      <SectionNav section={section} />
       <PostList section={section} />
       <a href="/rss.xml">RSS Feed</a>
     </React.Fragment>

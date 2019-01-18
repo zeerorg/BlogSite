@@ -3,6 +3,8 @@ import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 import cs from "highlight.js/lib/languages/cs";
 import bash from "highlight.js/lib/languages/bash";
+import go from "highlight.js/lib/languages/go";
+import yaml from "highlight.js/lib/languages/yaml";
 
 import Series from "./Series";
 
@@ -13,6 +15,8 @@ const DisplayPost = function(props) {
   hljs.registerLanguage("javascript", javascript);
   hljs.registerLanguage("cs", cs);
   hljs.registerLanguage("bash", bash);
+  hljs.registerLanguage("go", go);
+  hljs.registerLanguage("yaml", yaml);
   let postContainer = useRef(null);
 
   // set title and meta

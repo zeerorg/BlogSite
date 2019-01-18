@@ -12,29 +12,21 @@ const Post = function(props) {
           {props.title}
         </Link>
       </h3>
-      <p>
-        {new Date(props.timestamp * 1000).toDateString()},{" "}
-        {props.type.toUpperCase()}
-      </p>
+      <p>{new Date(props.timestamp * 1000).toDateString()}</p>
       <p>{props.tldr}</p>
     </div>
   );
 };
 
 const PostList = function(props) {
-  const { section } = props;
-
   return (
     <div>
       <GetContent url={url}>
         {allData =>
           JSON.parse(allData)
             .reverse()
-            .filter(
-              data =>
-                ((section === "all" && !data.notFrontpage) || data.type === section) && data.published
-            )
-            .map(data => <Post {...data} key={data.slug} section={section} />)
+            .filter(data => !data.notFrontpage && data.published)
+            .map(data => <Post {...data} key={data.slug} />)
         }
       </GetContent>
     </div>

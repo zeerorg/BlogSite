@@ -1,0 +1,19 @@
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex-main {
+  flex: 6;
+}
+
+.flex-item {
+  flex: 1;
+}
+
+@media screen and (max-width: 767px) {
+  /* start of medium tablet styles */
+  .flex-container {
+    display: block;
+  }
+}

@@ -7,8 +7,8 @@ h2 {
 }
 
 .DisplayPost h2, .DisplayPost h1, .DisplayPost h3 {
-  margin-bottom: 1rem !important;
-  margin-top: 2rem !important;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .DisplayPost h2, .DisplayPost h3 {
@@ -16,8 +16,8 @@ h2 {
 }
 
 .DisplayPost p, .DisplayPost ol, .DisplayPost li {
-  margin-bottom: 1rem !important;
-  margin-top: 1rem !important;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .DisplayPost img {

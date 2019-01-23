@@ -12,9 +12,15 @@ const Home = function(props) {
 
   return (
     <React.Fragment>
-      <div className="row">
-        <div className="col-md-2" />
-        <div className="col-md-8">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap"
+        }}
+      >
+        <div style={{ order: 1, flex: "1" }} />
+        <div style={{ order: 2, flex: "6", width: "100%" }}>
           <div className="my-5">
             <h1>
               <Link to="/" className="no-link-style">
@@ -32,6 +38,7 @@ const Home = function(props) {
           </p>
           <Page num={num} />
         </div>
+        <div style={{ order: 3, flex: "1" }} />
       </div>
     </React.Fragment>
   );

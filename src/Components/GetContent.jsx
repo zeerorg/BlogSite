@@ -5,10 +5,7 @@ import LoadingComponent from "./LoadingComponent";
 
 // Accepts a list of or a single url
 const GetContent = function(props) {
-  let [data, setData] = useState([null]);
-  let { url } = props;
-
-  if (!Array.isArray(url)) url = [url];
+  let data = useGetContent(props.url);
 
   let Waiting = !!props.Waiting
     ? props.Waiting
@@ -18,16 +15,23 @@ const GetContent = function(props) {
         </DelayedRender>
       );
 
-  useEffect(() => {
-    MultipleReq(url, setData);
-  }, []);
-
   if (data.includes(null)) {
     return <Waiting />;
   }
 
   return props.children(...data);
 };
+
+const useGetContent = function(url = []) {
+  let [data, setData] = useState([null]);
+  if (!Array.isArray(url)) url = [url];
+  
+  useEffect(() => {
+    MultipleReq(url, setData);
+  }, []);
+
+  return data
+}
 
 const MultipleReq = function(urls, updateCb) {
   updateCb(urls.map(url => sessionStorage.getItem(url)));
@@ -43,3 +47,4 @@ const MultipleReq = function(urls, updateCb) {
 };
 
 export default GetContent;
+export { useGetContent };

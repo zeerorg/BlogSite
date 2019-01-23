@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import hljs from "highlight.js/lib/highlight";
 import javascript from "highlight.js/lib/languages/javascript";
 import cs from "highlight.js/lib/languages/cs";
@@ -43,9 +44,18 @@ const DisplayPost = function(props) {
 
   return (
     <div className="container mx-0 px-0 DisplayPost" ref={postContainer}>
-      <div className="row">
-        <div className="col-md-1" />
-        <div className="col-md-9">
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap"
+        }}
+      >
+        <div style={{ order: 1 }} />
+        <div style={{ order: 2, flexBasis: "70%", width: "100%" }}>
+          <Link to="/" className="no-link-style">
+            <h2 className="my-4">Rishabh's Blog</h2>
+          </Link>
           <div dangerouslySetInnerHTML={{ __html: props.postHtml }} />
           <hr />
           {!!props.dev_to && (
@@ -59,7 +69,7 @@ const DisplayPost = function(props) {
           </p>
           <hr />
         </div>
-        <div className="col-md-2">
+        <div style={{ order: 3 }}>
           {props.series && (
             <Series {...props.series} currentPost={props.slug} />
           )}

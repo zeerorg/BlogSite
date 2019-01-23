@@ -1,9 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import GetContent from "./GetContent";
-import { api as url } from "../urls";
-
 const Post = function(props) {
   return (
     <div className="my-5">
@@ -19,16 +16,15 @@ const Post = function(props) {
 };
 
 const PostList = function(props) {
+  const { posts } = props;
   return (
     <div>
-      <GetContent url={url}>
-        {allData =>
-          JSON.parse(allData)
-            .reverse()
-            .filter(data => !data.notFrontpage && data.published)
-            .map(data => <Post {...data} key={data.slug} />)
-        }
-      </GetContent>
+      {posts
+        .reverse()
+        .filter(data => !data.notFrontpage && data.published)
+        .map(data => (
+          <Post {...data} key={data.slug} />
+        ))}
     </div>
   );
 };

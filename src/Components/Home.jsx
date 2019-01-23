@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import PostList from "./PostList";
+import Page from "./Page";
 
 const Home = function(props) {
+  const { num } = props;
+
   useEffect(() => {
     document.title = "Rishabh's Blog";
   }, []);
@@ -27,7 +29,7 @@ const Home = function(props) {
             <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /{" "}
             <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a>
           </p>
-          <PostList />
+          <Page num={num} />
           <a href="/rss.xml">RSS Feed</a>
         </div>
       </div>

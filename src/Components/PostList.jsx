@@ -19,12 +19,9 @@ const PostList = function(props) {
   const { posts } = props;
   return (
     <div>
-      {posts
-        .reverse()
-        .filter(data => !data.notFrontpage && data.published)
-        .map(data => (
-          <Post {...data} key={data.slug} />
-        ))}
+      {posts.map(data => (
+        <Post {...data} key={data.slug} />
+      ))}
     </div>
   );
 };

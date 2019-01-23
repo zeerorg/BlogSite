@@ -27,10 +27,10 @@ const Home = function(props) {
             stuff.
             <br />
             <a href="https://twitter.com/thisIsRGupta">@thisIsRGupta</a> /{" "}
-            <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a>
+            <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a> /{" "}
+            <a href="/rss.xml">RSS Feed</a>
           </p>
           <Page num={num} />
-          <a href="/rss.xml">RSS Feed</a>
         </div>
       </div>
     </React.Fragment>

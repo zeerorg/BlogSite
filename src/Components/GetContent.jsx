@@ -7,13 +7,7 @@ import LoadingComponent from "./LoadingComponent";
 const GetContent = function(props) {
   let data = useGetContent(props.url);
 
-  let Waiting = !!props.Waiting
-    ? props.Waiting
-    : () => (
-        <DelayedRender timeout={5000}>
-          <LoadingComponent />
-        </DelayedRender>
-      );
+  let Waiting = !!props.Waiting ? props.Waiting : DefaultWaiting;
 
   if (data.includes(null)) {
     return <Waiting />;
@@ -22,16 +16,25 @@ const GetContent = function(props) {
   return props.children(...data);
 };
 
+const DefaultWaiting = function() {
+  return (
+    <DelayedRender timeout={5000}>
+      <LoadingComponent />
+    </DelayedRender>
+  );
+};
+
+// Accepts an array of urls and returns array of data corresponding to that
 const useGetContent = function(url = []) {
   let [data, setData] = useState([null]);
   if (!Array.isArray(url)) url = [url];
-  
+
   useEffect(() => {
     MultipleReq(url, setData);
   }, []);
 
-  return data
-}
+  return data;
+};
 
 const MultipleReq = function(urls, updateCb) {
   updateCb(urls.map(url => sessionStorage.getItem(url)));
@@ -47,4 +50,4 @@ const MultipleReq = function(urls, updateCb) {
 };
 
 export default GetContent;
-export { useGetContent };
+export { useGetContent, DefaultWaiting };

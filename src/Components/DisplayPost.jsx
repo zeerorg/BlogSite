@@ -12,6 +12,7 @@ import Series from "./Series";
 
 import "highlight.js/styles/monokai.css";
 import "./Post.css";
+import "./flexbox.css";
 
 const DisplayPost = function(props) {
   hljs.registerLanguage("javascript", javascript);
@@ -44,40 +45,22 @@ const DisplayPost = function(props) {
   );
 
   return (
-    <div className="DisplayPost" ref={postContainer}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-evenly",
-          flexWrap: "wrap"
-        }}
-      >
-        <div style={{ order: 1, flex: "1" }} />
-        <div style={{ order: 2, flex: "6", width: "100%", margin: "3%" }}>
+    <div ref={postContainer}>
+      <div className="flex-container">
+        <div className="flex-item" />
+        <div className="flex-main">
           <Link to="/" className="no-link-style">
-            <h2 style={{ fontSize: "x-large", marginTop: "0rem" }}>
+            <h2 className="font-size-med margin-up-med margin-down-min">
               Rishabh's Blog
             </h2>
           </Link>
-          <div>
-            <div
-              style={{
-                display: "flex",
-                flexWrap: "wrap",
-                justifyContent: "space-evenly"
-              }}
-            >
-              <div
-                style={{
-                  order: 1,
-                  flex: "4",
-                  maxWidth: "100%"
-                }}
-              >
+          <div className="DisplayPost">
+            <div className="flex-container">
+              <div className="flex-main">
                 <div dangerouslySetInnerHTML={{ __html: props.postHtml }} />
                 <hr />
                 {!!props.dev_to && (
-                  <p style={{fontStyle: "italic"}}>
+                  <p style={{ fontStyle: "italic" }}>
                     For any discussion let's head over to{" "}
                     <a href={props.dev_to}>Dev.to</a>
                   </p>
@@ -87,15 +70,15 @@ const DisplayPost = function(props) {
                 </p>
                 <hr />
               </div>
-              <div style={{ order: 2, flex: "1", marginLeft: "1.5rem" }}>
-                {props.series && (
+              {props.series && (
+                <div className="flex-item margin-left-med">
                   <Series {...props.series} currentPost={props.slug} />
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
-        <div style={{ order: 4, flex: "1" }} />
+        <div className="flex-item" />
       </div>
     </div>
   );

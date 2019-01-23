@@ -5,10 +5,12 @@ body {
 
 h1 {
   font-weight: 800;
+  font-size: 2.5em;
 }
 
 h3 {
-  font-weight: 800
+  font-weight: 800;
+  font-size: 1.7em;
 }
 
 a, a:hover {
@@ -60,4 +62,62 @@ a {
 
 .series-heading {
   padding-left: 0.5em;
+}
+
+.margin-up-max {
+  margin-top: 3rem;
+}
+
+.margin-down-max {
+  margin-bottom: 3rem;
+}
+
+.margin-up-med {
+  margin-top: 1.5rem;
+}
+
+.margin-down-med {
+  margin-bottom: 1.5rem;
+}
+
+.margin-up-min {
+  margin-bottom: 0.5rem;
+}
+
+.margin-down-min {
+  margin-bottom: 0.5rem;
+}
+
+.margin-left-med {
+  margin-left: 1.5rem;
+}
+
+.margin-zero {
+  margin: 0;
+}
+
+.font-size-med {
+  font-size: 1.7em;
+}
+
+.width-full {
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media screen and (max-width: 700px) {
+  .margin-md-med {
+    margin: 1.5rem;
+  }
 }

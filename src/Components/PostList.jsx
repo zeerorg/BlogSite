@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Post = function(props) {
   return (
-    <div className="my-5">
-      <h3>
+    <div className="margin-up-max margin-down-max">
+      <h3 className="margin-zero">
         <Link to={"/post/" + props.slug} className="no-link-style my-3">
           {props.title}
         </Link>

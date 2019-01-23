@@ -13,4 +13,10 @@ let GetHTML = fileName =>
     GetHTML = fileName => `http://localhost:8081/html/${fileName}.html`;
   }
 
+  if (window.location.hostname.includes("192.168")) {
+    api = "http://192.168.1.12:8081/main.json";
+    series = "http://192.168.1.12:8081/series.json";
+    GetHTML = fileName => `http://192.168.1.12:8081/html/${fileName}.html`;
+  }
+
 export { api, series, GetHTML };

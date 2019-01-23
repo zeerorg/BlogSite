@@ -5,13 +5,19 @@
 
 .flex-main {
   flex: 6;
+  max-width: 100%;
+  min-width: 0;
 }
 
 .flex-item {
   flex: 1;
 }
 
-@media screen and (max-width: 767px) {
+.flex-shrink-no {
+  flex-shrink: 0;
+}
+
+@media screen and (max-width: 700px) {
   /* start of medium tablet styles */
   .flex-container {
     display: block;

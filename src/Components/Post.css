@@ -24,3 +24,10 @@ h2 {
   width: 100%;
   height: auto;
 }
+
+.DisplayPost p code {
+  background-color: lightgray;
+  font-size: large;
+  border-radius: 3px;
+  padding: .1em .2em;
+}

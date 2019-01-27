@@ -1,25 +1,20 @@
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import hljs from "highlight.js/lib/highlight";
+import Prism from "prismjs";
 
-import javascript from "highlight.js/lib/languages/javascript";
-import cs from "highlight.js/lib/languages/cs";
-import bash from "highlight.js/lib/languages/bash";
-import go from "highlight.js/lib/languages/go";
-import yaml from "highlight.js/lib/languages/yaml";
+import "prismjs/components/prism-go";
+import "prismjs/components/prism-csharp";
+import "prismjs/components/prism-nginx";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-jsx";
 
 import Series from "./Series";
 
-import "highlight.js/styles/monokai.css";
+import "prismjs/themes/prism-okaidia.css";
 import "./Post.css";
 import "./flexbox.css";
 
 const DisplayPost = function(props) {
-  hljs.registerLanguage("javascript", javascript);
-  hljs.registerLanguage("cs", cs);
-  hljs.registerLanguage("bash", bash);
-  hljs.registerLanguage("go", go);
-  hljs.registerLanguage("yaml", yaml);
   let postContainer = useRef(null);
 
   // set title and meta
@@ -31,8 +26,7 @@ const DisplayPost = function(props) {
 
   useEffect(
     () => {
-      hljs.initHighlighting.called = false;
-      hljs.initHighlighting();
+      Prism.highlightAll()
 
       // Add target: _blank to all link
       let links = postContainer.current.getElementsByTagName("a");

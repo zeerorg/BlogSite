@@ -31,3 +31,11 @@ h2 {
   border-radius: 3px;
   padding: .1em .2em;
 }
+
+.DisplayPost blockquote {
+  padding-left: 1em;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  font-size: large;
+  border-left: 2px solid black;
+}

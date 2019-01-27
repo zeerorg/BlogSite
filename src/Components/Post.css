@@ -7,7 +7,7 @@ h2 {
 }
 
 .DisplayPost h2, .DisplayPost h1, .DisplayPost h3 {
-  margin-bottom: 1rem;
+  margin-bottom: -0.5rem;
   margin-top: 2rem;
 }
 
@@ -16,8 +16,8 @@ h2 {
 }
 
 .DisplayPost p, .DisplayPost ol, .DisplayPost li {
-  margin-bottom: 1rem;
-  margin-top: 1rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .DisplayPost img {
@@ -34,8 +34,12 @@ h2 {
 
 .DisplayPost blockquote {
   padding-left: 1em;
-  padding-top: 0.1em;
-  padding-bottom: 0.1em;
+  padding-top: 0.01%;
+  padding-bottom: 0.01%;
   font-size: large;
   border-left: 2px solid black;
+}
+
+.DisplayPost pre[class*="language-"] {
+  margin-bottom: 1.5em;
 }

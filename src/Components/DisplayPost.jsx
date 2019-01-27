@@ -7,6 +7,7 @@ import "prismjs/components/prism-csharp";
 import "prismjs/components/prism-nginx";
 import "prismjs/components/prism-bash";
 import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-yaml";
 
 import Series from "./Series";
 

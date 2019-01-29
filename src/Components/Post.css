@@ -43,3 +43,34 @@ h2 {
 .DisplayPost pre[class*="language-"] {
   margin-bottom: 1.5em;
 }
+
+.DisplayPost .series-link {
+  color: black;
+  text-decoration: none;
+  border-left: 2px solid black;
+  display: block;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+  font-size: small;
+}
+
+.DisplayPost .series-link:hover {
+  font-weight: 800;
+  color: black;
+  border-left: 4px solid black;
+  display: block;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+}
+
+.DisplayPost .series-current {
+  font-size: small;
+  padding-left: 0.5em;
+  margin-left: 2px;
+  margin-top: 1em;
+}
+
+.DisplayPost .series-heading {
+  padding-left: 0.5em;
+  margin-bottom: 1em;
+}

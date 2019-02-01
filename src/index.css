@@ -89,6 +89,6 @@ a {
 
 @media screen and (max-width: 700px) {
   .margin-md-med {
-    margin: 1.5rem;
+    margin: 0.5rem;
   }
 }

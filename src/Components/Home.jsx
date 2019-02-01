@@ -32,11 +32,13 @@ const Home = function(props) {
               <a href="https://twitter.com/thisIsRGupta">
                 @thisIsRGupta
               </a> /{" "}
-              <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a> /{" "}
-              <a href="/rss.xml">RSS Feed</a>
+              <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a>
             </p>
           </div>
           <Page num={num} />
+          <hr />
+          <a href="/rss.xml">RSS Feed</a> / 
+          This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>
         </div>
         <div className="flex-item" />
       </div>

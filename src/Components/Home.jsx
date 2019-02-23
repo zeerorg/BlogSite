@@ -29,8 +29,8 @@ const Home = function(props) {
               I'm Rishabh, I blog about software development and some casual
               stuff.
               <br />
-              <a href="https://twitter.com/thisIsRGupta">
-                @thisIsRGupta
+              <a href="https://twitter.com/zeerorg">
+                @zeerorg
               </a> /{" "}
               <a href="mailto:r.g.gupta@outlook.com">r.g.gupta@outlook.com</a> /{" "}
               <a href="/rss.xml">RSS Feed</a>

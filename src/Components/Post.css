@@ -16,16 +16,21 @@ h2 {
 }
 
 .DisplayPost p, .DisplayPost ol, .DisplayPost li {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
+
+/* .DisplayPost li, .DisplayPost li > p {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+} */
 
 .DisplayPost img {
   width: 100%;
   height: auto;
 }
 
-.DisplayPost p code {
+.DisplayPost p code, .DisplayPost li > code {
   background-color: lightgray;
   font-size: large;
   border-radius: 3px;

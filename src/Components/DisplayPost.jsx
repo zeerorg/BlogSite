@@ -42,7 +42,7 @@ const DisplayPost = function(props) {
   return (
     <div ref={postContainer}>
       <div className="flex-container">
-        <div className="flex-item" />
+        <div className="flex-big-item" />
         <div className="flex-main">
           <Link to="/" className="no-link-style">
             <h2 className="font-size-med margin-up-med margin-down-min">
@@ -60,6 +60,12 @@ const DisplayPost = function(props) {
                     <a href={props.dev_to}>Dev.to</a>
                   </p>
                 )}
+                {!!props.tweet && (
+                  <p style={{ fontStyle: "italic" }}>
+                    Discussions in the{" "}
+                    <a href={props.tweet}>tweet</a>
+                  </p>
+                )}
                 <p className="text-secondary">
                   {new Date(props.timestamp * 1000).toDateString()}
                 </p>
@@ -73,7 +79,7 @@ const DisplayPost = function(props) {
             </div>
           </div>
         </div>
-        <div className="flex-item" />
+        <div className="flex-big-item" />
       </div>
     </div>
   );

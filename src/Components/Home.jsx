@@ -6,6 +6,7 @@ import "./flexbox.css";
 
 const Home = function(props) {
   const { num } = props;
+  const title = "Rishabh's Blog";
 
   useEffect(() => {
     document.title = "Rishabh's Blog";
@@ -20,7 +21,7 @@ const Home = function(props) {
           <div className="margin-up-max margin-down-max">
             <h1>
               <Link to="/" className="no-link-style">
-                Rishabh's Blog
+                {title}
               </Link>
             </h1>
           </div>

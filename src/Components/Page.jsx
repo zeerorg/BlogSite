@@ -8,6 +8,18 @@ import { api as url } from "../urls";
 
 const PageNav = function(props) {
   const { num, maxPage } = props;
+  let pagesList = [];
+
+  for (let i=1; i<=maxPage; i++) {
+    let page = <><Link to={`/page/${i}`}>{i.toString()}</Link>&nbsp;&nbsp;&nbsp;</>;
+
+    if (i === num) {
+      page = <><strong>{i.toString()}</strong>&nbsp;&nbsp;&nbsp;</>;
+    }
+
+    pagesList.push(page);
+  }
+
   return (
     <div className="flex-container">
       <div className="flex-item" style={{ marginLeft: "-15px" }}>
@@ -20,7 +32,7 @@ const PageNav = function(props) {
         )}
       </div>
       <div className="flex-item text-center">
-        <strong>{num}</strong>
+        {pagesList}
       </div>
       <div className="flex-item text-right">
         {num >= maxPage ? (
